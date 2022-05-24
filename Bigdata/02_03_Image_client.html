@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>JSP 영상처리 (Beta 1) 클라이언트 </title>
+</head>
+<body>
+<form action="02_03_Image_server.jsp" method="post">
+	<p> 입력 파일명 : <input type="text" value="Lenna512.raw" name="inFile">
+	<p> 출력 파일명 : <input type="text" value="Lenna512-out.raw" name="outFile">
+	<p> <select name="algo">
+			<option value=""> ~~ 알고리즘 선택 ~~~ </option>
+			<optgroup label="화소점">
+			<option value="101">반전 처리</option>
+			<option value="102">밝게/어둡게</option>	
+			<option value="103">128흑백반전</option>	
+			<option value="104">평균 흑백반전</option>	
+			<option value="105">파라볼라 Cap</option>
+			</optgroup>	
+			<optgroup label="기하학">
+			<option value="201">상하반전</option>
+			<option value="202">좌우반전</option>
+			<option value="203">축소영상</option>
+			<option value="204">확대영상</option>
+			</optgroup>
+			<optgroup label="히스토그램">
+			<option value="301">히스토그램 스트래칭</option>
+			<option value="302">엔드인</option>
+			<option value="303">히스토그램 평활화</option>
+			</optgroup>
+		</select>
+	<p> 파라미터1 : <input type="text" value="0" name="para1">
+	<p> 파라미터2 : <input type="text" value="0" name="para2">
+
+	<p><p> <input type="submit" value="영상 처리 진행!">
+</form>
+</body>
+</html>
