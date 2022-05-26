@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>JSP 영상처리 (RC) 클라이언트 </title>
+</head>
+<body>
+<form action="05_01_Image_server.jsp" method="post"
+	enctype="multipart/form-data">
+	
+	<p> <select name="algo">
+			<option value=""> ~~ 알고리즘 선택 ~~~ </option>
+			<optgroup label="화소점">
+			<option value="101">반전 처리</option>
+			<option value="102">밝게/어둡게</option>	
+			<option value="103">128흑백반전</option>	
+			<option value="104">평균 흑백반전</option>	
+			<option value="105">파라볼라 Cap</option>
+			<option value="106">파라볼라 Cup</option>
+			</optgroup>	
+			<optgroup label="기하학">
+			<option value="201">상하반전</option>
+			<option value="202">좌우반전</option>
+			<!-- <option value="203">축소영상</option>
+			<option value="204">확대영상</option> -->
+			</optgroup>
+			<optgroup label="히스토그램">
+			<option value="301">히스토그램 스트래칭</option>
+			<option value="302">엔드인</option>
+			<option value="303">히스토그램 평활화</option>
+			<option value="401">엠보싱</option>
+			<option value="402">블러링</option>
+			<option value="403">HPF</option>
+			<option value="404">샤프닝</option>
+			<option value="405">수직엣지검출</option>
+			<option value="406">수평엣지검출</option>
+			</optgroup>
+		</select>
+	<p> 파라미터1 : <input type="text" value="0" name="para1">
+	<p>파일: <input type='file' name='filename'>
+
+	<p><p> <input type="submit" value="영상 처리 진행!">
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>JSP 칼라 영상처리 (RC 1) 클라이언트 </title>
+</head>
+<body>
+<form action="04_01_image_server.jsp" method="post" 
+    							enctype="multipart/form-data">
+	
+	<p> <select name="algo">
+			<option value=""> ~~ 알고리즘 선택 ~~~ </option>
+			<option value="101">반전 처리</option>
+			<option value="102">밝게/어둡게</option>	
+		</select>
+	<p> 파라미터1 : <input type="text" value="0" name="para1">
+	<p> 파일 : <input type='file' name='filename'>
+
+	<p><p> <input type="submit" value="영상 처리 진행!">
+</form>
+</body>
+</html>
