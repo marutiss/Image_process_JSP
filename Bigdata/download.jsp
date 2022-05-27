@@ -5,7 +5,7 @@
 
 	String strFilename=java.net.URLDecoder.decode(request.getParameter("file"));
 	String strFilenameOutput=new String(strFilename.getBytes("euc-kr"),"8859_1");
-	File file=new File("c:/Out/"+strFilename); // 출력 결과를 C:/Out 폴더에 고정함.
+	File file=new File("C:/Out/"+strFilename); // 출력 결과를 C:/Out 폴더에 고정함.
 	byte b[]=new byte[(int)file.length()];
 	response.setHeader("Content-Disposition","attachment;filename="+strFilenameOutput);
 	response.setHeader("Content-Length",String.valueOf(file.length()));
