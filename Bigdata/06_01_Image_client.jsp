@@ -29,6 +29,8 @@ if(u_grade.equals("A")){
 	<p> <select name="algo">
 			<option value=""> ~~ 알고리즘 선택 ~~~ </option>
 			<optgroup label="화소점">
+			<option value="107">그레이스케일</option>
+			<option value="108">흑백처리</option>
 			<option value="101">반전 처리</option>
 			<option value="102">밝게/어둡게</option>	
 			<option value="103">128흑백반전</option>	
@@ -70,6 +72,7 @@ if(u_grade.equals("A")){
 	<p> <select name="algo">
 			<option value=""> ~~ 알고리즘 선택 ~~~ </option>
 			<optgroup label="화소점">
+			<option value="107">그레이스케일</option>
 			<option value="101">반전 처리</option>
 			<option value="102">밝게/어둡게</option>	
 			<option value="103">128흑백반전</option>	

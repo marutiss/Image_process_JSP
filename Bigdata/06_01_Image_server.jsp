@@ -100,6 +100,45 @@ public void rvsImage(){
 	}
 }
 
+public void grayImage(){
+	// (3-1) 반전 처리 : out = 255 - in
+	/*(중요!)출력 영상의 크기 결정 --> 알고리즘에 의존*/
+	outH= inH;
+	outW= inW;
+	outImage = new int[3][outH][outW];
+	//  ** 진짜 영상처리 알고리즘 **
+	for(int rgb=0;rgb<3;rgb++){
+		for(int i=0; i<inH; i++) {
+			for(int k=0; k<inW; k++) {
+				outImage[rgb][i][k]
+						=(inImage[0][i][k]+inImage[1][i][k]+inImage[2][i][k])/3;
+			}				
+		}
+	}
+}
+
+public void bwImage(){
+	// (3-1) 반전 처리 : out = 255 - in
+	/*(중요!)출력 영상의 크기 결정 --> 알고리즘에 의존*/
+	outH= inH;
+	outW= inW;
+	outImage = new int[3][outH][outW];
+	//  ** 진짜 영상처리 알고리즘 **
+	for(int rgb=0;rgb<3;rgb++){
+		for(int i=0; i<inH; i++) {
+			for(int k=0; k<inW; k++) {
+				int avg 
+					= (inImage[0][i][k]+inImage[1][i][k]+inImage[2][i][k])/3;
+				
+				if(avg>127)
+				outImage[rgb][i][k]=255;
+				else
+				outImage[rgb][i][k]=0;
+			}				
+		}
+	}
+}
+
 public void plusImage(){ //밝게하기
 	// (3-2) 더하기 : out = in + (para1)
 	// (중요!) 출력 영상의 크기 결정 --> 알고리즘에 의존
@@ -178,12 +217,12 @@ public void paracap(){
 	//** 진짜 영상처리 알고리즘 ** 파라볼라 Cap
 	int[] LUT=new int[256];
 	for(int i=0;i<256;i++){
-	    int outV=255*(i/127 - 1)*(i/127 - 1);
+		double outV=255*(i/127 - 1)*(i/127 - 1);
 	    if(outV<0)
 	        outV=0;
 	    if(outV>255)
 	        outV=255;
-	    LUT[i]=outV;
+	    LUT[i]=(int)outV;
 	}
 	for(int rgb=0;rgb<3;rgb++){
 	for(int i=0; i<inH; i++) {
@@ -241,7 +280,7 @@ public void rlImage(){
 	for(int rgb=0;rgb<3;rgb++){
 		for(int i=0; i<inH; i++) {
 			for(int k=0; k<inW; k++) {
-			outImage[rgb][i][k] =inImage[rgb][i][outH-k-1];
+			outImage[rgb][i][k] =inImage[rgb][i][outW-k-1];
 			}
 		} 
 	}
@@ -1008,13 +1047,19 @@ switch(algo) {
 	case "106"://파라볼라 cup
 		paracup();
 		break;
+	case "107":
+		grayImage();
+		break;
+	case "108":
+		bwImage();
+		break;
 		
 		
 	case "201"://상하반전
-		updwImage();
+		rlImage();
 		break;
 	case "202"://좌우반전
-		rlImage();
+		updwImage();
 		break;
 	case "203"://영상축소
 		zoomoutImage();
