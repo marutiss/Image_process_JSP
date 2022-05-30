@@ -18,3 +18,14 @@
   3. 프로젝트 속성>>Java Build Path >> [Libraries] >> Classpath >> <Add External JARs>로 추가
   4. 이클립스 재가동
 
+  (6)파일 업로드 패키지 (cos.jar)
+  1. C:\프로젝트폴더\WebContent\WEB-INF\lib 에 복사
+
+
+  2. C:\apache-tomcat-9.0.2\lib 에 복사
+
+
+  3. 프로젝트의 속성 중,
+
+  Java Build Path >> [Libraries] >> Classpath >> <Add External JARs>로 추가
+
