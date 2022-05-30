@@ -441,7 +441,8 @@ public void histoequal(){//히스토그램 평활화
 	   double LUT[][]=new double[3][256];
 	   for(int rgb=0;rgb<3;rgb++){
 	      for (int i=0; i<256; i++){
-	         LUT[rgb][i] = (double)sumHisto[rgb][i] * ( 1.0 / ((double)inH*(double)inW)) * 255.0;
+	         LUT[rgb][i] 
+	        	= (double)sumHisto[rgb][i] * ( 1.0 / ((double)inH*(double)inW)) * 255.0;
              System.out.println("oi: "+sumHisto[rgb][i]);
 	      }
 	   }
